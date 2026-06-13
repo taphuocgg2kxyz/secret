@@ -1,0 +1,11 @@
+{
+    "name": "Windows in Codespace",
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "features": {},
+    "customizations": {
+        "codespaces": {
+            "openPorts": [8006]
+        }
+    },
+    "postCreateCommand": "docker run -d --name windows -p 8006:8006 --device=/dev/kvm --cap-add=NET_ADMIN --vnc 0.0.0.0:5900 -e RAM_SIZE='6G' -e CPU_CORES='3' -e VERSION='https://archive.org/details/windows-10-lite-edition-19h2-x64' dockurr/windows"
+}
